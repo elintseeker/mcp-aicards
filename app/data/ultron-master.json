@@ -1,0 +1,27 @@
+{
+  "name": "Ultron, Master of Metal",
+  "Move": [
+    "Move (M)",
+    "Move (S)"
+  ],
+  "attacks": [
+    "Metallic Talons"
+  ],
+  "special": {
+    "2" : [
+      "Energy Blast"
+    ],
+    "6" : [
+      "The Rage of Ultron"
+    ]
+  },
+  "abilities": {
+    "2" : [
+      "Matter Transference",
+      "Enough!!!"
+    ],
+    "6" : [
+      "The Folly of Man"
+    ]
+  }
+}

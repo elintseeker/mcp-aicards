@@ -1,0 +1,24 @@
+{
+  "name": "Ultron",
+  "Move": [
+    "Move (M)",
+    "Move (S)"
+  ],
+  "attacks": [
+    "Strike",
+    "Energy Blast"
+  ],
+  "special": {
+    "3" : [
+      "Metallic Fury"
+    ]
+  },
+  "abilities": {
+    "2" : [
+      "Analyze and Annihilate"
+    ],
+    "3" : [
+      "Kinetic Field Generator"
+    ]
+  }
+}

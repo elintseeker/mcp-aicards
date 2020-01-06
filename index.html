@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MCP AI Card App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="app/style.css">
+  <link rel="stylesheet" type="text/css" href="app/kdm-skin.css">
+</head>
+<body>
+<div id="app">
+  <div class="splash" v-if="splash">
+    <img src="app/img/logo-mcp.png" alt="" class="logo" /><br />
+    Loading...
+  </div>
+  <div class="card">
+    <div class="cardcode" v-html="currCard"></div>
+
+    <div class="title" v-html="currCardName"></div>
+
+    <div class="data">
+      <h2>Targets of opportunity</h2>
+      <ul>
+        <li v-for="action in currCardTarget" v-html="action"></li>
+      </ul>
+    </div>
+
+    <div class="divider">
+      <div><svg><use xlink:href="#caret-down"/></svg></div>
+    </div>
+
+    <div class="data">
+      <h2>Actions</h2>
+      <ul>
+        <li v-for="action in currCardAction" v-html="action"></li>
+      </ul>
+    </div>
+
+    <div v-if="currCardAction2">
+      <div class="divider">
+        <div><svg><use xlink:href="#caret-down"/></svg></div>
+      </div>
+
+      <div class="data">
+        <ul>
+          <li v-for="action in currCardAction2" v-html="action"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button @click.prevent="getAICard" :disabled="disableButton">Get AI Card</button>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-map">
+  <symbol id="caret-down" viewBox="0 0 292.4 292.4">
+    <path d="M287 69.4a17.6 17.6 0 00-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 000 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z"/>
+  </symbol>
+</svg>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app/app.min.js"></script>
+</body>
+</html>
