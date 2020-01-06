@@ -13,6 +13,22 @@
     <img src="app/img/logo-mcp.png" alt="" class="logo" /><br />
     Loading...
   </div>
+  <div class="help" v-if="showHelp">
+    <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
+    <div class="help-content">
+      <h1>Help</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
+    </div>
+  </div>
   <div class="card">
     <div class="cardcode" v-html="currCard"></div>
 
@@ -48,7 +64,11 @@
       </div>
     </div>
   </div>
-  <button @click.prevent="getAICard" :disabled="disableButton">Get AI Card</button>
+  <div class="buttons">
+    <button @click.prevent="launchHelp">?</button>
+    <button @click.prevent="getAICard" :disabled="disableButton" class="mainbtn">Get AI Card</button>  
+  </div>
+  
 </div>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="icon-map">

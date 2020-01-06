@@ -9,6 +9,7 @@ var app = new Vue({
     currCardAction: null,
     currCardAction2: null,
     disableButton: false,
+    showHelp: false,
     splash: true
   },
   methods: {
@@ -72,6 +73,14 @@ var app = new Vue({
       setTimeout(function(){
         vm.disableButton = false
       }, 500);
+    },
+    launchHelp: function(e) {
+      var vm = this;
+      vm.showHelp = true;
+    },
+    closeHelp: function(e) {
+      var vm = this;
+      vm.showHelp = false;
     }
   },
   mounted: function() {
