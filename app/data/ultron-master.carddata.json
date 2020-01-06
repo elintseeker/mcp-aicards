@@ -6,8 +6,9 @@
         "Nearest objective, in [b]range (4)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], nearest terrain (cover)",
-        "[b]Energy Blast[/b] nearest target near objective"
+        "[b]Move (M)[/b], nearest objective (cover)",
+        "[b]Move (M)[/b], nearest objective",
+        "Interact, objective"
       ],
       "actionSecondary": [
         "Move (M), nearest terrain (cover)"
@@ -16,49 +17,39 @@
     "BA2": {
       "name": "Strike...",
       "target": [
-        "Nearest model, in range (2)"
+        "Nearest, in [b]range (2)[/b]",
+        "Random, in [b]range (3)[/b]"
       ],
       "action": [
         "[b]Metallic Talons[/b]",
-        "[b]Move (M)[/b], nearest objective, nearest to target"
+        "[b]Metallic Talons[/b]"
       ]
     },
     "BA3": {
       "name": "Targeting...",
       "target": [
-        "Nearest model, wounded, in [b]range (3)[/b]",
+        "Nearest model (wounded), in [b]range (3)[/b]",
         "Nearest model, in [b]range (4)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], target (cover)",
-        "Energy Blast"
+        "[b]Move (M)[/b] target (cover)",
+        "Energy Blast, target"
       ],
       "actionSecondary": [
-        "Move (M), nearest objective",
-        "Interact, objective"
+        "Move (M)/Interact, nearest objective"
       ]
     },
     "BA4": {
       "name": "Warning...",
       "target": [
-        "Nearest objective, in [b]range (3)[/b]"
+        "Nearest objective, in [b]range (3)[/b]",
+        "Nearest terrain (cover), in [b]range (3)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], nearest terrain (cover)"
+        "[b]Move (M)[/b]/Interact, nearest objective"
       ],
       "actionSecondary": [
-        "Energy Blast, nearest target, in range (2)",
-        "Interact, objective"
-      ]
-    },
-    "BA5": {
-      "name": "Caution...",
-      "target": [
-        "Nearest objective, in [b]range (3)[/b]"
-      ],
-      "action": [
-        "[b]Move (M)[/b], nearest objective (cover)",
-        "Interact, objective"
+        "Energy Blast, nearest target, in range (3)"
       ]
     }
   },
@@ -74,14 +65,13 @@
         "[b]Energy Blast[/b]"
       ],
       "actionSecondary": [
-        "Move (M), nearest objective",
-        "Interact, objective"
+        "Move (M)/Interact, nearest objective"
       ]
     },
     "SA2": {
       "name": "Enough!!!",
       "target": [
-        "Nearest target, in [b]range (3)[/b]"
+        "Nearest model, in [b]range (3)[/b]"
       ],
       "action": [
         "[b]Enough!!![/b]",
@@ -90,32 +80,31 @@
       ],
       "actionSecondary": [
         "Move (M), target (most wounds)",
-        "Move (M), nearest objective, cover"
+        "Move (M), nearest terrain (cover)"
       ]
     },
     "SA3": {
       "name": "Irritated!",
       "target": [
-        "Nearest, wounded, in [b]range (3)[/b]"
+        "Nearest model, in [b]range (3)[/b] (wounded)",
+        "Random, in [b]range (3)[/b]"
       ],
       "action": [
-        "[b]The Folly of Man[/b]",
-        "[b]Energy Blast[/b]",
-        "[b]Energy Blast[/b]"
-      ],
-      "actionSecondary": [
-        "Move (S), nearest target (most wounds)"
+        "Activates [b]The Folly of Man[/b]",
+        "[b]Energy Blast[/b], target",
+        "[b]Energy Blast[/b], target"
       ]
     },
     "SA4": {
       "name": "You!",
       "target": [
-        "Nearest, most wounded, in [b]range (3)[/b]"
+        "Nearest, most wounded, in [b]range (3)[/b]",
+        "Nearest, in [b]range (3)[/b]"
       ],
       "action": [
-        "[b]Matter Transference[/b]",
-        "[b]Energy Blast[/b]",
-        "[b]Strike[/b]"
+        "Activate [b]Matter Transference[/b], target",
+        "[b]Metallic Talons[/b], target",
+        "[b]Energy Blast[/b], target"
       ]
     },
     "SA5": {
@@ -129,28 +118,26 @@
       ],
       "actionSecondary": [
         "Move (S), nearest target (most health)",
-        "Strike"
+        "Metallic Talons"
       ]
     },
     "SA6": {
       "name": "Assault!",
       "target": [
+        "Previous, in [b]range (3)[/b]",
         "Nearest, in [b]range (3)[/b]"
       ],
       "action": [
-        "[b]The Folly of Man[/b]",
+        "Activate [b]The Folly of Man[/b]",
         "[b]Move (M)[/b], target (most health)",
         "[b]Energy Blast[/b]"
-      ],
-      "actionSecondary": [
-        "Move (M), target"
       ]
     },
     "SA7": {
       "name": "Pursuit",
       "target": [
         "Previous, in [b]range (3)[/b]",
-        "Furthest, in [b]range (4)[/b]"
+        "Farthest, in [b]range (4)[/b]"
       ],
       "action": [
         "[b]Metallic Talons[/b]",
@@ -159,7 +146,19 @@
       ],
       "actionSecondary": [
         "Move (M), nearest objective",
-        "Energy Blast"
+        "Energy Blast, target"
+      ]
+    },
+    "SA8": {
+      "name": "Into the Fray!",
+      "target": [
+        "Nearest, in [b]range (2)[/b]",
+        "Nearest (wounded), in [b]range (3)[/b]"
+      ],
+      "action": [
+        "Activate [b]Matter Transference[/b], target(s)",
+        "Metallic Talons, target",
+        "Metallic Talons, target (random)"
       ]
     }
   }

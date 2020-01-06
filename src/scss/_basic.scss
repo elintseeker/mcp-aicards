@@ -1,9 +1,13 @@
-* {
-  box-shadow: border-box;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overscroll-behavior: contain;
 }
 
 body {
-  margin: 0; padding: 0;
+  margin: 0; padding: 0 0 60px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #eee;
@@ -11,8 +15,8 @@ body {
 }
 
 h2 {
-  margin: 0 0 16px;
-  font-size: 16px;
+  margin: 0 0 8px;
+  font-size: 18px;
   font-weight: 300;
 
   span {
@@ -20,7 +24,61 @@ h2 {
   }
 }
 
-.splash {
+.nav {
+  position: fixed;
+  right: 0; bottom: 0; left: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+
+  padding: 8px;
+
+  font-size: 14px;
+  height: 60px;
+  overflow: hidden;
+
+  .mainbtn {
+    flex: 1;
+  }
+
+  button {
+    display: block;
+    margin: 0; padding: 8px;
+    min-width: 44px;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: #eee;
+    text-align: center;
+    white-space: nowrap;
+
+    background-color: #333;
+    border: 1px solid #666;
+    border-radius: 6px;
+    user-select: none;
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    & + * {
+      margin-left: 16px;
+    }
+  }
+}
+
+.splash,
+.help {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
 
@@ -30,19 +88,55 @@ h2 {
   justify-content: center;
 
   font-weight: 300;
-  font-size: 18px;
-  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #eee;
 
   background-color: #3a3a3a;
   z-index: 9999;
 }
 
+.help-content {
+  position: fixed;
+  top: 0; bottom: 0;
+  z-index: 5;
+
+  margin: 0 auto;
+  padding: 16px 32px;
+  max-width: 560px;
+  overflow-y: auto;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px; right: 16px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  font-size: 28px;
+
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .card {
   position: relative;
-  margin: 1em auto 2em;
-  padding: 1.5em 1.25em;
+  margin: 16px auto;
+  padding: 16px 24px;
   min-height: 460px;
-  width: 100%;
   max-width: 280px;
   color: #222;
   background-color: #eaeaea;
@@ -88,33 +182,8 @@ h2 {
 
 .icon-map { display: none; }
 
-button {
-  display: block;
-  margin: 24px auto;
-  padding: 12px 16px;
-
-  width: 100%;
-  max-width: 320px;
-
-  font-size: 18px;
-  color: #000;
-
-  background: #ddd;
-  border-radius: 5px;
-
-  outline: none;
-  cursor: pointer;
-  user-select: none;
-}
-
-button[disabled] {
-  pointer-events: none;
-  opacity: 0.2;
-}
-
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .card {
-    margin: 3em auto;
-    min-height: 480px;
+    margin-top: 48px;
   }
 }
