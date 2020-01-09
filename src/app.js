@@ -1,7 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    dataUrl: './app/data/ultron-master.carddata.json',
+    dataUrl: './app/data/ultron-master.deckdata.json',
     characterData: null,
     currentCards: null,
     currCard: null,
@@ -22,8 +22,8 @@ var app = new Vue({
     formatText: function(text) {
       if (text) {
         for(var i=0; i < text.length; i++) {
-        text[i] = text[i].replace('[b]', '<strong>').replace('[/b]', '</strong>');
-        text[i] = text[i].replace('[em]', '<em>').replace('[/em]', '</em>');
+          text[i] = text[i].replace('[b]', '<strong>').replace('[/b]', '</strong>').replace('[b]', '<strong>').replace('[/b]', '</strong>');
+          text[i] = text[i].replace('[em]', '<em>').replace('[/em]', '</em>');
         }
       }
       return text;
