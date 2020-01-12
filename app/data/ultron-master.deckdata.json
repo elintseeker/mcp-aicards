@@ -6,8 +6,8 @@
         "Nearest objective, [b]range (5)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], nearest objective ",
-        "[b]Move (M)[/b], nearest objective",
+        "[b]Move (M)[/b], target",
+        "[b]Move (M)[/b], target",
         "Interact"
       ]
     },

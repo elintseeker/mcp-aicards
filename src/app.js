@@ -11,7 +11,8 @@ var app = new Vue({
     currCardAction2: null,
     disableButton: false,
     showHelp: false,
-    splash: true
+    splash: true,
+    prevCard: 'BA1'
   },
   methods: {
     randomizer: function(max) {
@@ -75,7 +76,16 @@ var app = new Vue({
     },
     getAICard: function(e) {
       var vm = this;
+
       vm.getCard();
+      
+      // console.log(vm.currCard, vm.prevCard);
+      // if (vm.currCard !== vm.prevCard) {
+      //   vm.prevCard = vm.currCard;
+      // } else {
+      //   vm.getCard();
+      //   console.log('getting new card...');
+      // }
 
       vm.disableButton = true
       setTimeout(function(){
