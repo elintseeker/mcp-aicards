@@ -3,11 +3,11 @@
     "BA1": {
       "name": "Calibrating...",
       "target": [
-        "Nearest objective, [b]range (4)[/b]"
+        "Nearest objective, [b]range (5)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], nearest objective ",
-        "[b]Move (M)[/b], nearest objective",
+        "[b]Move (M)[/b], target",
+        "[b]Move (M)[/b], target",
         "Interact"
       ]
     },
@@ -25,31 +25,31 @@
     "BA3": {
       "name": "Targeting...",
       "target": [
-        "Nearest (wounded), [b]range (3)[/b]",
-        "Nearest, [b]range (4)[/b]"
+        "Nearest (wounded), [b]range (4)[/b]",
+        "Nearest (most health), [b]range (4)[/b]"
       ],
       "action": [
         "[b]Move (M)[/b] target",
         "[b]Energy Blast[/b], target"
       ],
       "actionSecondary": [
-        "[b]Move (M)[/b], nearest objective",
+        "[b]Move (M)[/b], nearest non-controlled objective",
         "Interact"
       ]
     },
     "BA4": {
       "name": "Warning...",
       "target": [
-        "Nearest objective, [b]range (3)[/b]",
-        "Nearest terrain, [b]range (3)[/b]"
+        "Nearest objective, [b]range (4)[/b]",
+        "Nearest terrain, [b]range (4)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], nearest objective",
+        "[b]Move (M)[/b] nearest objective",
         "Interact"
       ],
       "actionSecondary": [
-        "[b]Energy Blast[/b], nearest, [b]range (3)[/b]",
-        "Activate [b]Enough!!![/b]"
+        "[b]Energy Blast[/b], nearest (random), [b]range (4)[/b]",
+        "React with [b]Enough!!![/b]"
       ]
     }
   },
@@ -58,85 +58,97 @@
       "name": "Calculating...",
       "target": [
         "Nearest (wounded), [b]range (4)[/b]",
-        "Nearest objective, [b]range (3)[/b]"
+        "Nearest, [b]range (4)[/b]"
       ],
       "action": [
         "[b]Metallic Talons[/b]",
         "[b]Energy Blast[/b]"
       ],
       "actionSecondary": [
-        "[b]Move (M)[/b], Homebase",
+        "[b]Move (M)[/b], nearest non-controlled objective",
         "Interact"
       ]
     },
     "SA2": {
       "name": "Enough!!!",
       "target": [
-        "Nearest, [b]range (3)[/b]"
+        "Nearest, [b]range (4)[/b]"
       ],
       "action": [
         "[b]Energy Blast[/b]",
         "[b]Metallic Talons[/b]"
       ],
       "actionSecondary": [
-        "[b]Move (M)[/b], farthest objective, [b]range (4)[/b]",
-        "[b]Enough!!![/b]"
+        "[b]Move (M)[/b], farthest non-controlled objective",
+        "Interact",
+        "React with [b]Enough!!![/b]"
       ]
     },
     "SA3": {
       "name": "Irritated!",
       "target": [
-        "Nearest (wounded), [b]range (3)[/b]",
-        "Random, [b]range (3)[/b]"
+        "Nearest (wounded), [b]range (4)[/b]",
+        "Random, [b]range (4)[/b]"
       ],
       "action": [
         "Activates [b]The Folly of Man[/b]",
-        "[b]Energy Blast[/b], target",
-        "[b]Energy Blast[/b], target"
+        "[b]Energy Blast[/b]",
+        "[b]Energy Blast[/b]"
+      ],
+      "actionSecondary": [
+        "[b]Move (M)[/b], nearest objective",
+        "React with [b]Enough!!![/b]"
       ]
     },
     "SA4": {
       "name": "Gnats!!!",
       "target": [
-        "Random model, [b]range (3)[/b]"
+        "Random model, [b]range (4)[/b]"
       ],
       "action": [
         "Activates [b]The Folly of Man[/b]",
         "[b]Energy Blast[/b], target",
-        "[b]Move (S)[/b], target"
+        "[b]Move (M)[/b], target"
+      ],
+      "actionSecondary": [
+        "[b]Move (M)[/b], homebase"
       ]
     },
     "SA5": {
       "name": "You!",
       "target": [
-        "Last attacker, [b]range (3)[/b]",
-        "Nearest, [b]range (2)[/b]"
+        "Last attacker",
+        "Nearest, [b]range (3)[/b]"
       ],
       "action": [
         "Activate [b]Matter Transference[/b], target",
-        "[b]Metallic Talons[/b], target",
-        "[b]Energy Blast[/b], target"
+        "[b]Metallic Talons[/b]",
+        "[b]Energy Blast[/b]"
+      ],
+      "actionSecondary": [
+        "[b]Move (M)[/b], homebase"
       ]
     },
     "SA6": {
       "name": "Enraged!",
       "target": [
-        "Nearest, most wounded target(s), [b]range (2)[/b]"
+        "Nearest, most wounded target"
       ],
       "action": [
         "[b]Move (M)[/b], target(s)",
         "[b]The Rage of Ultron[/b], target(s)"
       ],
       "actionSecondary": [
-        "[b]Move (S)[/b], nearest target (most health)",
+        "[b]Move (M)[/b], nearest (most health)",
+        "[b]Energy Blast[/b]",
         "[b]Metallic Talons[/b]"
       ]
     },
     "SA7": {
       "name": "Assault!",
       "target": [
-        "Previous target, [b]range (3)[/b]",
-        "Nearest model (wounded), [b]range (3)[/b]"
+        "Previous target",
+        "Nearest (wounded), [b]range (4)[/b]"
       ],
       "action": [
         "Activate [b]The Folly of Man[/b]",
@@ -148,22 +160,18 @@
     "SA8": {
       "name": "Pursuit",
       "target": [
-        "Previous, [b]range (3)[/b]",
+        "Previous, [b]range (4)[/b]",
         "Farthest, [b]range (4)[/b]"
       ],
       "action": [
         "[b]Move (M)[/b], target",
-        "[b]Metallic Talons[/b]"
-      ],
-      "actionSecondary": [
-        "[b]Energy Blast[/b]",
-        "[b]Move (M)[/b], target"
+        "[b]Energy Blast[/b]"
       ]
     },
     "SA9": {
       "name": "Into the Fray!",
       "target": [
-        "Nearest, [b]range (2)[/b]",
+        "Nearest, [b]range (3)[/b]",
         "Nearest (wounded), [b]range (3)[/b]"
       ],
       "action": [
@@ -172,31 +180,38 @@
         "[b]Metallic Talons[/b], target (random)"
       ],
       "actionSecondary": [
-        "Activate [b]Enough!!![/b]"
+        "[b]Move (M)[/b], nearest non-controlled objective",
+        "Interact",
+        "React with [b]Enough!!![/b]"
       ]
     },
     "SA10": {
       "name": "Interference Detected",
       "target": [
-        "Nearest objective/terrain, [b]range (4)[/b]"
+        "Nearest objective, [b]range (4)[/b]"
       ],
       "action": [
-        "[b]Metallic Talons[/b], nearest model (random), [b]range (2)[/b]"
+        "Activate [b]Matter Transference[/b], target",
+        "[b]Energy Blast[/b], nearest (random), [b]range (4)[/b]",
+        "[b]Energy Blast[/b], nearest (random), [b]range (4)[/b]"
       ],
       "actionSecondary": [
-        "Activate [b]Matter Transference[/b], target",
-        "[b]Move (M)[/b], target",
-        "Activate [b]Enough!!![/b]"
+        "React with [b]Enough!!![/b]"
       ]
     },
     "SA11": {
       "name": "Pym's Regret",
       "target": [
-        "Nearest model (most health), [b]range (4)[/b]"
+        "Nearest (most health), [b]range (3)[/b]"
       ],
       "action": [
-        "[b]Move (M)[/b], target(s)",
+        "[b]Move (M)[/b], target",
         "[b]The Rage of Ultron[/b]"
+      ],
+      "actionSecondary": [
+        "[b]Move (M)[/b], nearest range (5)",
+        "[b]Energy Blast[/b], nearest (random)",
+        "React with [b]Enough!!![/b]"
       ]
     }
   }
