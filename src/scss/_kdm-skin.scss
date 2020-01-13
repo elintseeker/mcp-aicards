@@ -16,7 +16,7 @@
 .divider > div {
   position: relative;
   top: -2px;
-  width: 24px; height: 24px;
+  width: 32px; height: 32px;
 
   display: -webkit-box;
 
@@ -26,7 +26,8 @@
   -webkit-box-pack: center;
           justify-content: center;
 
-  background: #ddd;
+  // background: #ddd;
+  background: #eaeaea;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -36,14 +37,22 @@
   margin-top: 2px;
   width: 16px;
   height: 16px;
-  fill: #666;
+  fill: #444;
+
+  &.alert {
+    fill: #b95a5a;
+  }
+
+  &.else {
+    fill: #888;
+  }
 }
 
 .data li {
   padding: 4px 8px;
   margin-bottom: 4px;
   font-size: 0.81rem;
-  color: #333;
+  color: #444;
   background-color: #ddd;
   border-radius: 6px;
 }

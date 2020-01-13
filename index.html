@@ -22,13 +22,7 @@
   </div>
   <div class="help" v-if="showHelp" v-cloak>
     <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
-    <div class="help-content">
-      <h1>Help</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, officia sit recusandae deserunt nesciunt omnis distinctio molestiae minus harum asperiores laborum vel laboriosam, iusto, est ratione atque provident repudiandae! Neque.</p>
-    </div>
+    <div class="help-content" v-html="helpContent"></div>
   </div>
   <div class="card" v-cloak>
     <div class="cardcode" v-html="currCard"></div>
@@ -42,9 +36,9 @@
       </ul>
     </div>
 
-    <div class="divider">
+    <!-- <div class="divider">
       <div><svg><use xlink:href="#caret-down"/></svg></div>
-    </div>
+    </div> -->
 
     <div class="data">
       <h2>Actions</h2>
@@ -55,7 +49,7 @@
 
     <div v-if="currCardAction2">
       <div class="divider">
-        <div><svg><use xlink:href="#alert"/></svg></div>
+        <div><svg class="alert"><use xlink:href="#alert"/></svg></div>
       </div>
 
       <div class="data">
@@ -67,11 +61,11 @@
 
     <div v-if="currCardEtc">
       <div class="divider">
-        <div><svg><use xlink:href="#help"/></svg></div>
+        <div><svg class="else"><use xlink:href="#help"/></svg></div>
       </div>
 
       <div class="data">
-        <ul>
+        <ul class="etc">
           <li v-for="action in currCardEtc" v-html="action"></li>
         </ul>
       </div>
@@ -99,6 +93,7 @@
 </svg>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@10.0.0/dist/markdown-it.min.js"></script>
 <script src="app/app.min.js"></script>
 </body>
 </html>

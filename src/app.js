@@ -12,6 +12,7 @@ var app = new Vue({
     currCardEtc: null,
     disableButton: false,
     showHelp: false,
+    helpContent: null,
     splash: true,
     prevCard: 'B1'
   },
@@ -108,8 +109,18 @@ var app = new Vue({
   },
   mounted: function() {
     this.$nextTick(function() {
+
+      var vm = this;
+
+      fetch('../HELP.md').then(function(response){
+        return response.text();
+      }).then(function(data){
+        var md = window.markdownit();
+        vm.helpContent = md.render(data);
+      });
+
       // this.getData();
-      this.getData('basic');
+      vm.getData('basic');
     });
   }
-})
+});
