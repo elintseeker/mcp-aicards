@@ -1,6 +1,6 @@
 {
-  "basic": {
-    "BA1": {
+  "Basic": {
+    "B1": {
       "name": "Initiate...",
       "target": [
         "Nearest objective (uncontrolled)"
@@ -13,7 +13,7 @@
         "If a target opposing model is in range [em]after its first action[/em], Attack."
       ]
     },
-    "BA2": {
+    "B2": {
       "name": "Searching...",
       "target": [
         "Nearest objective (uncontrolled)",
@@ -28,7 +28,7 @@
         "If no valid targets in range, model moves towards [b]nearest uncontrolled/contested objective[/b]"
       ]
     },
-    "BA3": {
+    "B3": {
       "name": "Move & Attack",
       "target": [
         "Nearest model"
@@ -38,7 +38,7 @@
         "Attack (superpower)"
       ]
     },
-    "BA4": {
+    "B4": {
       "name": "Move & Attack",
       "target": [
         "Nearest model"
@@ -51,7 +51,7 @@
         "If no valid targets in range, this model moves towards [b]nearest uncontrolled/contested objective[/b]"
       ]
     },
-    "BA5": {
+    "B5": {
       "name": "Move & Attack",
       "target": [
         "Nearest model, near objective"
@@ -64,7 +64,7 @@
         "If no valid targets in range, this model moves towards the [b]nearest objective[/b] and interacts with it when able."
       ]
     },
-    "BA6": {
+    "B6": {
       "name": "Protecting...",
       "target": [
         "Nearest model, near objective"
@@ -80,7 +80,7 @@
         "If no valid targets in range, this model moves to the [b]nearest terrain[/b] for cover."
       ]
     },
-    "BA7": {
+    "B7": {
       "name": "Cautious...",
       "target": [
         "Nearest model"
@@ -96,7 +96,7 @@
         "If no valid targets, this model moves to the [b]nearest terrain[/b] for cover."
       ]
     },
-    "BA8": {
+    "B8": {
       "name": "Acquired",
       "target": [
         "Nearest objective (non-controlled)"
@@ -110,7 +110,7 @@
         "When attacked, activate a [em]reactive superpower[/em] when able."
       ]
     },
-    "BA9": {
+    "B9": {
       "name": "Error...",
       "target": [
         "Nearest model"
@@ -123,7 +123,7 @@
         "If no valid target in range, this model moves towards [b]nearest model[/b] and Attacks"
       ]
     },
-    "BA10": {
+    "B10": {
       "name": "Flank",
       "target": [
         "Nearest terrain"
@@ -136,7 +136,7 @@
         "If no valid targets in range, this model moves towards [b]nearest model[/b] retaining cover."
       ]
     },
-    "BA11": {
+    "B11": {
       "name": "Pursuit...",
       "target": [
         "Previous target",
@@ -150,7 +150,7 @@
         "If no valid targets in range, this model moves towards [b]nearest model[/b]."
       ]
     },
-    "BA12": {
+    "B12": {
       "name": "Assault!",
       "target": [
         "Nearest model (most-wounded)",
@@ -165,7 +165,7 @@
         "If no valid targets in range, this model moves towards [b]nearest objective[/b] and interacts with it when able."
       ]
     },
-    "BA13": {
+    "B13": {
       "name": "Targeting...",
       "target": [
         "Nearest model (wounded)",
@@ -180,7 +180,7 @@
         "If no valid target in range, this model moves towards [b]nearest model[/b] (most wounds)"
       ]
     },
-    "BA14": {
+    "B14": {
       "name": "Targeting...",
       "target": [
         "Nearest model",
@@ -194,7 +194,7 @@
         "If no valid target in range, this model moves towards [b]nearest random[/b] model."
       ]
     },
-    "BA15": {
+    "B15": {
       "name": "Pursuing...",
       "target": [
         "Previous target",
@@ -208,7 +208,7 @@
         "If no valid target in range, model moves towards [b]nearest random[/b] model."
       ]
     },
-    "BA16": {
+    "B16": {
       "name": "Targeting...",
       "target": [
         "Nearest model"

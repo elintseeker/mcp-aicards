@@ -13,7 +13,7 @@ var app = new Vue({
     disableButton: false,
     showHelp: false,
     splash: true,
-    prevCard: 'BA1'
+    prevCard: 'B1'
   },
   methods: {
     randomizer: function(max) {
@@ -46,7 +46,7 @@ var app = new Vue({
           vm.characterData = data;
 
           // get first card (move)
-          vm.getCard('basic', 'BA1');
+          vm.getCard('basic', vm.prevCard);
           setTimeout(function(){
             vm.splash = false;
           }, 1500);
