@@ -1,0 +1,206 @@
+{
+  "basic": {
+    "BA1": {
+      "name": "Searching...",
+      "target": [
+        "Nearest objective (uncontrolled)"
+      ],
+      "action": [
+        "Move",
+        "Move"
+      ]
+    },
+    "BA2": {
+      "name": "Searching...",
+      "target": [
+        "Nearest objective (uncontrolled)",
+        "Nearest objective"
+      ],
+      "action": [
+        "Move",
+        "Interact"
+      ]
+    },
+    "BA3": {
+      "name": "Move & Attack",
+      "target": [
+        "Nearest model"
+      ],
+      "action": [
+        "Move",
+        "Activate Superpower",
+        "Attack (Power)",
+        "Attack"
+      ]
+    },
+    "BA4": {
+      "name": "Move & Attack",
+      "target": [
+        "Nearest model, near objective"
+      ],
+      "action": [
+        "Move",
+        "Attack (Power)",
+        "Attack"
+      ]
+    },
+    "BA5": {
+      "name": "Move & Attack",
+      "target": [
+        "Nearest model, near objective"
+      ],
+      "action": [
+        "Move",
+        "Attack (0 Power)",
+        "Attack (0 Power)"
+      ]
+    },
+    "BA6": {
+      "name": "Protecting...",
+      "target": [
+        "Nearest model, near objective"
+      ],
+      "action": [
+        "Move",
+        "Attack"
+      ],
+      "actionSecondary": [
+        "Activate [em]reactive[/em] superpower"
+      ]
+    },
+    "BA7": {
+      "name": "Cautious...",
+      "target": [
+        "Nearest model"
+      ],
+      "action": [
+        "Move",
+        "Attack (0 Power)"
+      ],
+      "actionSecondary": [
+        "Activate [em]reactive[/em] superpower"
+      ]
+    },
+    "BA8": {
+      "name": "Objective",
+      "target": [
+        "Nearest objective (non-controlled)"
+      ],
+      "action": [
+        "Move",
+        "Interact",
+        "Attack, nearest model, in range"
+      ],
+      "actionSecondary": [
+        "Activate [em]reactive[/em] superpower"
+      ]
+    },
+    "BA9": {
+      "name": "Cover...",
+      "target": [
+        "Nearest terrain (cover)"
+      ],
+      "action": [
+        "Move",
+        "Attack, nearest model, in range (superpower)",
+        "Attack, nearest model, in range"
+      ],
+      "actionSecondary": [
+        "Activate [em]reactive[/em] superpower"
+      ]
+    },
+    "BA10": {
+      "name": "Flank",
+      "target": [
+        "Nearest terrain"
+      ],
+      "action": [
+        "Move, (cover)",
+        "Attack, nearest model, in range"
+      ]
+    },
+    "BA11": {
+      "name": "Pursuit",
+      "target": [
+        "Previous target",
+        "Nearest model (most-wounded)"
+      ],
+      "action": [
+        "Move",
+        "Attack, nearest model, in range"
+      ]
+    },
+    "BA12": {
+      "name": "Assault!",
+      "target": [
+        "Nearest model (most-wounded)",
+        "Nearest model (most-health)"
+      ],
+      "action": [
+        "Attack (superpower)",
+        "Attack"
+      ],
+      "actionSecondary": [
+        "Move, nearest controlled/contested objective"
+      ]
+    },
+    "BA13": {
+      "name": "Targeting...",
+      "target": [
+        "Nearest model (wounded)",
+        "Farthest model"
+      ],
+      "action": [
+        "Attack",
+        "Attack"
+      ],
+      "actionSecondary": [
+        "Move, nearest model"
+      ]
+    },
+    "BA14": {
+      "name": "Targeting...",
+      "target": [
+        "Nearest model",
+        "Farthest model"
+      ],
+      "action": [
+        "Move",
+        "Attack (superpower)"
+      ],
+      "actionSecondary": [
+        "Move, nearest objective",
+        "Move, towards home edge"
+      ]
+    },
+    "BA15": {
+      "name": "Pursuing...",
+      "target": [
+        "Previous target",
+        "Farthest model",
+        "Nearest model"
+      ],
+      "action": [
+        "Attack (superpower)",
+        "Attack"
+      ],
+      "actionSecondary": [
+        "Move, nearest target"
+      ]
+    },
+    "BA16": {
+      "name": "Targeting...",
+      "target": [
+        "Nearest model"
+      ],
+      "action": [
+        "Attack (superpower)",
+        "Attack"
+      ],
+      "actionSecondary": [
+        "Move, nearest model near objective",
+        "Move, towards home edge"
+      ]
+    }
+  }
+}
