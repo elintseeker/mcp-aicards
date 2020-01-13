@@ -12,7 +12,13 @@
   <div class="splash" v-if="splash">
     <img src="app/img/logo-mcp.png" alt="" class="logo" /><br />
 
-    <p>Loading LMD data...</p>
+    <p>Loading LMD deck...</p>
+
+    <!-- <select v-model="selectedData" @change="getData()">
+      <option>Select LMD deck...</option>
+      <option value="basic">Basic (test)</option>
+      <option value="ultron-master">Ultron Master of Metal (test)</option>
+    </select> -->
   </div>
   <div class="help" v-if="showHelp" v-cloak>
     <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
@@ -55,6 +61,18 @@
       <div class="data">
         <ul>
           <li v-for="action in currCardAction2" v-html="action"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div v-if="currCardEtc">
+      <div class="divider">
+        <div><svg><use xlink:href="#help"/></svg></div>
+      </div>
+
+      <div class="data">
+        <ul>
+          <li v-for="action in currCardEtc" v-html="action"></li>
         </ul>
       </div>
     </div>

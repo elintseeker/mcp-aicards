@@ -1,7 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    dataUrl: './app/data/ultron-master.deckdata.json',
+    selectedData: null,
     characterData: null,
     currentCards: null,
     currCard: null,
@@ -9,6 +9,7 @@ var app = new Vue({
     currCardTarget: null,
     currCardAction: null,
     currCardAction2: null,
+    currCardEtc: null,
     disableButton: false,
     showHelp: false,
     splash: true,
@@ -23,27 +24,32 @@ var app = new Vue({
     formatText: function(text) {
       if (text) {
         for(var i=0; i < text.length; i++) {
-          text[i] = text[i].replace('[b]', '<strong>').replace('[/b]', '</strong>').replace('[b]', '<strong>').replace('[/b]', '</strong>');
-          text[i] = text[i].replace('[em]', '<em>').replace('[/em]', '</em>');
+          text[i] = text[i].replace(/(\[b\])/g, '<strong>')
+                      .replace(/(\[\/b\])/g, '</strong>')
+                      .replace(/(\[em\])/g, '<strong>')
+                      .replace(/(\[\/em\])/g, '</strong>');
         }
       }
       return text;
     },
-    getData: function(name){
+    getData: function(dataName){
       var vm = this;
 
-      fetch(vm.dataUrl)
+      var item = dataName || vm.selectedData;
+
+      fetch('app/data/' + item + '.deckdata.json')
         .then(function(response){
           return response.json();
         })
         .then(function(data){
           // console.log(data);
           vm.characterData = data;
-          vm.getCard('basic', 'BA1');
 
+          // get first card (move)
+          vm.getCard('basic', 'BA1');
           setTimeout(function(){
             vm.splash = false;
-          }, 2000);
+          }, 1500);
         });
     },
     getCard: function(actionType, cardName){
@@ -65,14 +71,13 @@ var app = new Vue({
         card = vm.currentCards[cardCode];
       }
 
-
-
       // write out for display
       vm.currCard = cardCode;
       vm.currCardName = vm.formatText(card.name);
       vm.currCardTarget = vm.formatText(card.target);
       vm.currCardAction = vm.formatText(card.action);
       vm.currCardAction2 = vm.formatText(card.actionSecondary);
+      vm.currCardEtc = vm.formatText(card.actionEtc);
     },
     getAICard: function(e) {
       var vm = this;
@@ -103,7 +108,8 @@ var app = new Vue({
   },
   mounted: function() {
     this.$nextTick(function() {
-      this.getData();
+      // this.getData();
+      this.getData('basic');
     });
   }
 })
