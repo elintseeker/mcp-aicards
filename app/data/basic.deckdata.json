@@ -1,13 +1,16 @@
 {
   "basic": {
     "BA1": {
-      "name": "Searching...",
+      "name": "Initiate...",
       "target": [
         "Nearest objective (uncontrolled)"
       ],
       "action": [
         "Move",
         "Move"
+      ],
+      "actionEtc": [
+        "If a target opposing model is in range, [em]after its first action[/em], Attack."
       ]
     },
     "BA2": {
@@ -19,6 +22,10 @@
       "action": [
         "Move",
         "Interact"
+      ],
+      "actionEtc": [
+        "If a target opposing model is in range, [em]after its first action[/em], Attack.",
+        "If no valid targets, model moves towards [b]nearest uncontrolled/contested objective[/b]"
       ]
     },
     "BA3": {
@@ -28,20 +35,20 @@
       ],
       "action": [
         "Move",
-        "Activate Superpower",
-        "Attack (Power)",
-        "Attack"
+        "Attack (superpower)"
       ]
     },
     "BA4": {
       "name": "Move & Attack",
       "target": [
-        "Nearest model, near objective"
+        "Nearest model"
       ],
       "action": [
         "Move",
-        "Attack (Power)",
         "Attack"
+      ],
+      "actionEtc":[
+        "If no valid targets, model moves towards [b]nearest uncontrolled/contested objective[/b]"
       ]
     },
     "BA5": {
@@ -51,8 +58,10 @@
       ],
       "action": [
         "Move",
-        "Attack (0 Power)",
-        "Attack (0 Power)"
+        "Attack"
+      ],
+      "actionEtc":[
+        "If no valid targets, model moves towards [b]nearest objective[/b] and interacts with it when able."
       ]
     },
     "BA6": {
@@ -65,7 +74,10 @@
         "Attack"
       ],
       "actionSecondary": [
-        "Activate [em]reactive[/em] superpower"
+        "When attacked, activate a [em]reactive superpower[/em] when able."
+      ],
+      "actionEtc": [
+        "If no valid targets, this model moves to the [b]nearest terrain[/b] for cover."
       ]
     },
     "BA7": {
@@ -75,38 +87,43 @@
       ],
       "action": [
         "Move",
-        "Attack (0 Power)"
+        "Attack"
       ],
       "actionSecondary": [
-        "Activate [em]reactive[/em] superpower"
+        "When attacked, activate a [em]reactive superpower[/em] when able."
+      ],
+      "actionEtc": [
+        "If no valid targets, this model moves to the [b]nearest terrain[/b] for cover."
       ]
     },
     "BA8": {
-      "name": "Objective",
+      "name": "Acquired",
       "target": [
         "Nearest objective (non-controlled)"
       ],
       "action": [
         "Move",
-        "Interact",
-        "Attack, nearest model, in range"
+        "Interact"
       ],
       "actionSecondary": [
-        "Activate [em]reactive[/em] superpower"
+        "If a target opposing model is in range, [em]after its first action[/em], Attack.",
+        "When attacked, activate a [em]reactive superpower[/em] when able."
       ]
     },
     "BA9": {
       "name": "Cover...",
       "target": [
-        "Nearest terrain (cover)"
+        "Nearest terrain"
       ],
       "action": [
-        "Move",
-        "Attack, nearest model, in range (superpower)",
-        "Attack, nearest model, in range"
+        "Move (cover)",
+        "Attack (nearest model, in range, throw/superpower)"
       ],
       "actionSecondary": [
-        "Activate [em]reactive[/em] superpower"
+        "When attacked, activate a [em]reactive superpower[/em] when able."
+      ],
+      "actionEtc": [
+        "If no valid targets, this model moves towards [b]nearest model[/b] retaining cover."
       ]
     },
     "BA10": {
@@ -115,19 +132,25 @@
         "Nearest terrain"
       ],
       "action": [
-        "Move, (cover)",
-        "Attack, nearest model, in range"
+        "Move, (cover)"
+      ],
+      "actionEtc": [
+        "If there are valid targets, in range, [em]while in cover[/em], Attack.",
+        "If no valid targets, this model moves towards [b]nearest model[/b] retaining cover."
       ]
     },
     "BA11": {
-      "name": "Pursuit",
+      "name": "Pursuit...",
       "target": [
         "Previous target",
         "Nearest model (most-wounded)"
       ],
       "action": [
         "Move",
-        "Attack, nearest model, in range"
+        "Attack (superpower)"
+      ],
+      "actionEtc": [
+        "If no valid targets, this model moves towards [b]nearest model[/b]."
       ]
     },
     "BA12": {
@@ -138,10 +161,11 @@
       ],
       "action": [
         "Attack (superpower)",
-        "Attack"
+        "Attack (superpower)"
       ],
-      "actionSecondary": [
-        "Move, nearest controlled/contested objective"
+      "actionEtc": [
+        "If no valid targets, this model moves towards [b]nearest model[/b] and attacks.",
+        "If no valid targets, this model moves towards [b]nearest objective[/b] and interacts with it when able."
       ]
     },
     "BA13": {
@@ -151,11 +175,12 @@
         "Farthest model"
       ],
       "action": [
+        "Activate superpower (offensive)",
         "Attack",
         "Attack"
       ],
-      "actionSecondary": [
-        "Move, nearest model"
+      "actionEtc":[
+        "If no valid targets, this model moves towards [b]nearest model[/b] (most wounds)"
       ]
     },
     "BA14": {
@@ -168,24 +193,22 @@
         "Move",
         "Attack (superpower)"
       ],
-      "actionSecondary": [
-        "Move, nearest objective",
-        "Move, towards home edge"
+      "actionEtc": [
+        "If no valid targets, this model moves towards [b]nearest random[/b] model."
       ]
     },
     "BA15": {
       "name": "Pursuing...",
       "target": [
         "Previous target",
-        "Farthest model",
-        "Nearest model"
+        "Farthest model"
       ],
       "action": [
         "Attack (superpower)",
         "Attack"
       ],
-      "actionSecondary": [
-        "Move, nearest target"
+      "actionEtc": [
+        "If no valid targets, model moves towards [b]nearest random[/b] model."
       ]
     },
     "BA16": {
@@ -194,12 +217,11 @@
         "Nearest model"
       ],
       "action": [
-        "Attack (superpower)",
+        "Activate (superpower)",
         "Attack"
       ],
-      "actionSecondary": [
-        "Move, nearest model near objective",
-        "Move, towards home edge"
+      "actionEtc": [
+        "If no valid targets, model moves towards the [b]nearest objective[/b] and interacts with it when able."
       ]
     }
   }
