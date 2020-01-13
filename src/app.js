@@ -47,7 +47,9 @@ var app = new Vue({
 
           // get first card (move)
           vm.getCard('basic', 'BA1');
-          vm.splash = false;
+          setTimeout(function(){
+            vm.splash = false;
+          }, 1500);
         });
     },
     getCard: function(actionType, cardName){
