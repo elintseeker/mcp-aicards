@@ -37,7 +37,7 @@ h2 {
 hr {
   margin: 32px 1em; padding: 0;
   border: 0;
-  border-top: 1px solid #444;
+  border-top: 1px solid #666;
 }
 
 .nav {
@@ -155,7 +155,7 @@ hr {
   position: relative;
   margin: 16px auto;
   padding: 16px 24px;
-  min-height: 460px;
+  min-height: 490px;
   max-width: 280px;
   color: #222;
   background-color: #eaeaea;
@@ -185,6 +185,7 @@ hr {
       margin: 0 0 1rem;
       padding: 0;
       background-color: transparent;
+      word-spacing: 0.1em;
     }
   }
 
@@ -215,6 +216,7 @@ hr {
 }
 
 .title {
+  margin-top: 0.5em;
   margin-bottom: 1em;
   font-size: 18px;
   text-align: center;

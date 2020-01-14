@@ -1,7 +1,7 @@
 {
   "basic": {
     "B1": {
-      "name": "Initiate...",
+      "name": "Initiating...",
       "target": [
         "Nearest objective (uncontrolled)"
       ],
@@ -27,20 +27,20 @@
         "If a target opposing model is in range [em]after its first action[/em], Attack."
       ],
       "actionEtc": [
-        "If no valid targets in range, model moves towards [b]nearest uncontrolled/contested objective[/b]."
+        "If no valid targets in range, model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
       ]
     },
     "B3": {
       "name": "Move & Attack",
       "target": [
-        "Nearest model"
+        "Nearest model (wounded)"
       ],
       "action": [
         "Move",
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, model moves towards [b]nearest uncontrolled/contested objective[/b]."
+        "If no valid targets in range, model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
       ]
     },
     "B4": {
@@ -53,7 +53,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards [b]nearest uncontrolled/contested objective[/b]."
+        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
       ]
     },
     "B5": {
@@ -104,7 +104,7 @@
     "B8": {
       "name": "Acquiring...",
       "target": [
-        "Nearest objective (non-controlled)"
+        "Nearest objective (contested)"
       ],
       "action": [
         "Move",
@@ -147,7 +147,8 @@
       "name": "Pursuit...",
       "target": [
         "Previous target",
-        "Nearest model (most-wounded)"
+        "Nearest model (most-wounded)",
+        "Farthest model"
       ],
       "action": [
         "Move",
@@ -161,15 +162,15 @@
       "name": "Assault!",
       "target": [
         "Nearest model (most-wounded)",
-        "Nearest model (most-health)"
+        "Nearest model (most-health)",
+        "Nearest model"
       ],
       "action": [
         "Attack (superpower)",
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest model[/b] and Attacks.",
-        "If no valid targets in range, this model moves towards [b]nearest objective[/b] and interacts with it when able."
+        "If no valid targets in range, this model moves towards [b]nearest model[/b] (random) and Attacks."
       ]
     },
     "B13": {
@@ -184,7 +185,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards [b]nearest model[/b] (most wounds)."
+        "If no valid targets in range, this model moves towards [b]nearest model[/b] (most wounds) and Attacks."
       ]
     },
     "B14": {

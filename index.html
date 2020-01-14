@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>MCP AI Card App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="app/style.min.css">
   <style type="text/css">[v-cloak] { display: none; }</style>
+  <link rel="stylesheet" type="text/css" href="app/style.min.css">
 </head>
 <body>
 <div id="app">
@@ -19,6 +19,7 @@
       <option value="basic">Basic (test)</option>
       <option value="ultron-master">Ultron Master of Metal (test)</option>
     </select> -->
+
   </div>
   <div class="help" v-if="showHelp" v-cloak>
     <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
@@ -53,7 +54,7 @@
       </div>
 
       <div class="data">
-        <ul>
+        <ul class="etc">
           <li v-for="action in currCardAction2" v-html="action"></li>
         </ul>
       </div>
