@@ -175,7 +175,7 @@ hr {
 
 .data {
   margin: 0 0 0.8em;
-  color: #222;
+  color: #444;
 
   ul {
     margin: 0; padding: 0;
@@ -186,6 +186,21 @@ hr {
       padding: 0;
       background-color: transparent;
     }
+  }
+
+  li {
+    padding: 4px 8px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 7px;
+  }
+  
+  strong {
+    font-weight: 500;
+    color: #000;
   }
 }
 

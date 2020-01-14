@@ -105,11 +105,8 @@ var app = new Vue({
     closeHelp: function(e) {
       var vm = this;
       vm.showHelp = false;
-    }
-  },
-  mounted: function() {
-    this.$nextTick(function() {
-
+    },
+    loadHelp: function() {
       var vm = this;
 
       fetch('../HELP.md').then(function(response){
@@ -118,8 +115,12 @@ var app = new Vue({
         var md = window.markdownit();
         vm.helpContent = md.render(data);
       });
-
-      // this.getData();
+    }
+  },
+  mounted: function() {
+    this.$nextTick(function() {
+      var vm = this;
+      vm.loadHelp();
       vm.getData('basic');
     });
   }

@@ -1,0 +1,36 @@
+{
+  "name": "mcp-aicards",
+  "version": "1.0.0",
+  "description": "Unofficial AI deck for Marvel Crisis Protocol",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/scss/ -o app/",
+    "css-prefix": "postcss --use autoprefixer --replace \"app/*.css\" \"!app/*.min.css\"",
+    "css-minify": "cleancss -o app/style.min.css app/style.css",
+    "js-compile": "uglifyjs -c -m -o app/app.min.js src/app.js",
+    "watch-css": "nodemon --watch src/scss/ --ext scss --exec \"npm run css\"",
+    "watch-js": "nodemon --watch src/ --ext js --exec \"npm run js-compile\"",
+    "watch": "npm-run-all --parallel watch-*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elintseeker/mcp-aicards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elintseeker/mcp-aicards/issues"
+  },
+  "homepage": "https://github.com/elintseeker/mcp-aicards#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0",
+    "uglify-js": "^3.7.5"
+  },
+  "dependencies": {}
+}
