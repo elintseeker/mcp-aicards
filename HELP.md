@@ -11,8 +11,8 @@ Try this LMD Deck out with the *Ultron, Master of Metal Ultimate Encounter* even
 ### Card sections
 - **Targets of Opportunity** - are potential targets for the actions the LMD is going to take this turn. It can be a player model, objective/token, or terrain feature depending on the objectives or scenarios.   
 - **Actions** - are in-game turn action(s) for a model to do. If the LMD cannot do an action listed, move on to the next action in order and so on. If a selecting an "attack type" for an attack action, select the appropriate defense stat of the target.   
-- **\[!\]** - are actions taken usually when attacked and will react with an appropriate superpower when able.   
-- **\[?\]** - are default basic actions if a model cannot do any of the listed actions in the previous sections and/or still have an action left in its activation.
+- **\[ ! \]** - are actions taken usually when attacked and will react with an appropriate superpower when able.   
+- **\[ ? \]** - are default basic actions if a model cannot do any of the listed actions in the previous sections and/or still have an action left in its activation.
 
 ### Additional rules
 - **Move** - LMD will use its full movement (S, M, L) to the target, going around or on top of terrain features when applicable.

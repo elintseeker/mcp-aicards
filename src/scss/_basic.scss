@@ -34,6 +34,12 @@ h2 {
   }
 }
 
+hr {
+  margin: 32px 1em; padding: 0;
+  border: 0;
+  border-top: 1px solid #444;
+}
+
 .nav {
   position: fixed;
   right: 0; bottom: 0; left: 0;
@@ -113,7 +119,7 @@ h2 {
 
   margin: 0 auto;
   padding: 16px 32px;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   overflow-y: auto;
 
@@ -124,7 +130,9 @@ h2 {
   }
 }
 
-.close {
+.close,
+.close:hover,
+.close:active {
   position: absolute;
   top: 16px; right: 16px;
   z-index: 100;
@@ -137,9 +145,9 @@ h2 {
   height: 44px;
 
   font-size: 28px;
-
   color: #fff;
   text-decoration: none;
+  border: 0;
   cursor: pointer;
 }
 
