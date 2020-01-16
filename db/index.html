@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MCP Character Stats Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">[v-cloak] { display: none; }</style>
+  <link rel="stylesheet" type="text/css" href="/app/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/app/viewer.min.css">
+</head>
+<body>
+<div id="app">
+  <div class="splash" v-if="splash">
+    <img src="/app/img/logo-mcp.png" alt="" class="logo" /><br />
+
+    <p>Loading Character DB...</p>
+
+  </div>
+  <div class="help" v-if="showHelp" v-cloak>
+    <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
+    <div class="help-content" v-html="helpContent"></div>
+  </div>
+  <div class="card" v-cloak>
+    <div class="top">
+      <h1 class="character">{{ name }} <span class="alias">{{ alias }}</span></h1>
+      <div>
+        <div class="character-stats">
+          <div class="stat-block" v-for="(stat, name) in stats">
+            <div class="icon"><img :src="'/app/img/icon-' + name + '.svg'" :alt="name" /></div>
+            {{ stat }}
+          </div>
+        </div>
+        <div  class="character-def">
+          <div class="stat-block" v-for="(def, name) in defense">
+            <div class="icon"><img :src="'/app/img/icon-' + name + '.svg'" :alt="name" /></div>
+            {{ def }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="entry attack" v-for="(attack, name, index) in attacks">
+        <div class="stats">
+          <div class="stat-block fw">
+            <div class="icon"><img :src="'/app/img/icon-' + attack.icon + '.svg'" :alt="attack.icon" /></div>
+            {{ attack.power }}
+          </div>
+          <div class="stat-block">
+            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+            {{ attack.range }}
+          </div>
+          <div class="stat-block">
+            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+            {{ attack.strength }}
+          </div>
+          <div class="stat-block">
+            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+            {{ attack.cost }}
+          </div>
+        </div>
+        <ul class="descriptions">
+          <li v-for="desc in attack.description">{{ desc }}</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="entry super" v-for="(item, name) in superpowers">
+        <div class="stats">
+          <div class="stat-block fw" v-if="item.power">
+            <div class="icon"><img :src="'/app/img/icon-' + item.icon + '.svg'" :alt="item.icon" /></div>
+            {{ item.power }}
+          </div>
+          <div class="stat-block" v-if="item.cost">
+            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+            {{ item.cost }}
+          </div>
+        </div>
+        <ul class="descriptions" v-if="item.description">
+          <li v-for="desc in item.description">{{ desc }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="nav buttons">
+    <button @click.prevent="" :disabled="disableButton" class="mainbtn">&lt;</button>
+    <button @click.prevent="launchHelp">?</button>
+    <button @click.prevent="" :disabled="disableButton" class="mainbtn">&gt;</button>
+  </div>
+</div>
+
+<symbol xmlns="http://www.w3.org/2000/svg" class="icon-map">
+  <symbol id="help" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path d="M10 .4a9.6 9.6 0 100 19.2A9.6 9.6 0 0010 .4zm-.2 15.2c-.8 0-1.3-.6-1.3-1.4 0-.7.6-1.3 1.3-1.3.9 0 1.4.6 1.4 1.4 0 .8-.6 1.3-1.4 1.3zm3.3-6.5l-1 1-.6.3-.6.7v.6H8.6c0-.8 0-1.3.3-1.6.5-.6 1.6-1.3 1.6-1.3l.4-.4.3-.8c0-.3 0-.6-.2-1-.2-.2-.6-.3-1.1-.3-.5 0-.9.1-1 .5a2 2 0 00-.4 1V8H6.4c0-1.4.5-2.4 1.4-3 .6-.3 1.3-.5 2.1-.5 1 0 2 .3 2.7.8.7.5 1 1.3 1 2.3 0 .6-.1 1-.5 1.6z"/>
+  </symbol>
+  <symbol id="erm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path d="M10 7.8a2.2 2.2 0 100 4.4 2.2 2.2 0 000-4.4zm-7 0a2.2 2.2 0 100 4.4 2.2 2.2 0 000-4.4zm14 0a2.2 2.2 0 100 4.4 2.2 2.2 0 000-4.4z"/>
+  </symbol>
+  <symbol id="power" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <g fill="none" fill-rule="evenodd" transform="translate(38.6 38.6)">
+      <circle cx="217.7" cy="216.9" r="216.4" fill="#222"/>
+      <path fill="#FFF" d="M217.7 43l40.4 96.3 62-24.9-24.8 62.1 96.3 40.4-96.3 40.4 24.9 59-62.1-24.9-40.4 99.4-40.4-99.4-62.1 24.9 24.8-59-96.2-40.4 96.2-40.4-24.8-62 62.1 24.8L217.7 43zm0 222.5a48.6 48.6 0 100-97.2 48.6 48.6 0 000 97.2z"/>
+    </g>
+  </symbol>
+  <symbol id="innate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <g fill="none" fill-rule="evenodd" transform="translate(39 39)">
+      <circle cx="217.7" cy="217.4" r="216.4" fill="#222"/>
+      <path fill="#FFF" fill-rule="nonzero" d="M218 255c-31 36-59 55-91 55a92 92 0 010-185c31 0 60 19 91 54 30-35 59-54 90-54a92 92 0 110 185c-31 0-60-19-90-55zm-91 17c21 0 45-18 73-55-28-36-52-54-73-54a55 55 0 000 109zm181 0a55 55 0 000-109c-20 0-44 18-73 54 29 37 53 55 73 55z"/>
+    </g>
+  </symbol>
+</svg>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@10.0.0/dist/markdown-it.min.js"></script>
+<script src="/app/viewer.min.js"></script>
+</body>
+</html>

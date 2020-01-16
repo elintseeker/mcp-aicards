@@ -1,0 +1,78 @@
+{
+  "name": "Captain Marvel",
+  "alias": "Carol Danvers",
+  "stats": {
+    "stamina": 6,
+    "move": "M",
+    "size": 2,
+    "threat": 4
+  },
+  "defense": {
+    "physical": 3,
+    "energy": 4,
+    "mystic": 3
+  },
+  "attacks": [
+    {
+      "power": "Strike",
+      "icon": "physical",
+      "range": 2,
+      "strength": 5,
+      "cost": 0,
+      "description": [
+        "After this attack is resolved, this character gains [power] equal to the [damage] dealt."
+      ]
+    },
+    {
+      "power": "Energy Blast",
+      "icon": "energy",
+      "range": 4,
+      "strength": 4,
+      "cost": 0,
+      "description": [
+        "After this attack is resolved, this character gains 1 [power].",
+        "This character may reroll any number of attack dice for this attack."
+      ]
+    },
+    {
+      "power": "Rocket Punch",
+      "icon": "physical",
+      "range": 3,
+      "strength": 7,
+      "cost": 3,
+      "description": [
+        "[wild] Stagger: After this attack is resolved, the terget character gains the Stagger special condition."
+      ]
+    }
+  ],
+  "superpowers": [
+    {
+      "power": "Binary Form",
+      "icon": "active",
+      "cost": 5,
+      "description": [
+        "Until the start of this character's next activation, it adds two dice to its attack and defense rolls."
+      ]
+    },
+    {
+      "power": "Danver's Special",
+      "icon": "active",
+      "cost": 3,
+      "description": [
+        "Choose an interactive terrain feature or an enemy character, both of [size] 3 or less and within [range] 2, and throw it [m]. This superpower can be used only once per turn."
+      ]
+    },
+    {
+      "power": "Energy Absorption",
+      "icon": "innate",
+      "cost": 3,
+      "description": [
+        "When this character is defending against an [energy] attack, for each [wild] in the defense roll they may change one of the attacker's [crit], [wild], or [hit] to a blank. This character gains 1 [power] for each die changed in this way."
+      ]
+    },
+    {
+      "power": "Flight, Immunity (Poison)",
+      "icon": "innate"
+    }
+  ]
+}

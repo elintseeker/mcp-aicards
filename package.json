@@ -7,8 +7,8 @@
     "css": "npm-run-all css-compile css-prefix css-minify",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/scss/ -o app/",
     "css-prefix": "postcss --use autoprefixer --replace \"app/*.css\" \"!app/*.min.css\"",
-    "css-minify": "cleancss -o app/style.min.css app/style.css",
-    "js-compile": "uglifyjs -c -m -o app/app.min.js src/app.js",
+    "css-minify": "cleancss -o app/style.min.css app/style.css && cleancss -o app/viewer.min.css app/viewer.css",
+    "js-compile": "uglifyjs -c -m -o app/app.min.js src/app.js && uglifyjs -c -m -o app/viewer.min.js src/viewer.js",
     "watch-css": "nodemon --watch src/scss/ --ext scss --exec \"npm run css\"",
     "watch-js": "nodemon --watch src/ --ext js --exec \"npm run js-compile\"",
     "watch": "npm-run-all --parallel watch-*"

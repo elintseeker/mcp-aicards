@@ -1,0 +1,106 @@
+.card {
+  max-width: 600px;
+}
+
+.entry {
+  margin-bottom: 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 600;
+  padding: 8px;
+  height: 1.8em;
+
+  .name {
+    font-weight: 800;
+  }
+}
+
+.stat-block {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+
+  &.fw {
+    margin-left: -24px;
+    flex: 1;
+
+    .icon img,
+    .icon svg {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+.descriptions {
+  margin: 0; padding: 8px;
+  list-style: none;
+  font-size: 14px;
+  border-top: 1px solid #aaa;
+
+  li:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}
+
+.icon img,
+.icon svg {
+  display: block;
+  margin-right: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+
+.character-stats,
+.character-def {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+  font-size: 28px;
+
+  .icon img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stat-block {
+    margin: 0; padding: 0;
+    height: auto;
+
+    & + .stat-block {
+      margin-left: 16px;
+    }
+  }
+}
+
+.character-def {
+  padding-bottom: 16px;;
+}
+
+.character {
+  margin: 0;
+  flex: 1;
+  font-size: 32px;
+
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    color: #888;
+  }
+}
+
+.top {
+  display: flex;
+}
