@@ -1,3 +1,5 @@
+@import "webfont";
+
 .card {
   max-width: 600px;
 }
@@ -8,6 +10,13 @@
   border-radius: 6px;
 }
 
+.icon img,
+.icon svg {
+  display: block;
+  margin-right: 4px;
+  width: 24px;
+  height: 24px;
+}
 
 .stats {
   display: flex;
@@ -34,8 +43,8 @@
 
     .icon img,
     .icon svg {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
     }
   }
 }
@@ -51,41 +60,38 @@
   }
 }
 
-.icon img,
-.icon svg {
-  display: block;
-  margin-right: 4px;
-  width: 24px;
-  height: 24px;
-}
-
-
 .character-stats,
 .character-def {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 4px;
-  font-size: 28px;
+  font-size: 18px;
 
   .icon img {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
   }
 
   .stat-block {
-    margin: 0; padding: 0;
+    margin: 0; padding: 2px 8px;
     height: auto;
 
     & + .stat-block {
-      margin-left: 16px;
+      margin-left: 4px;
     }
+
+    border: 1px solid #888;
+    border-radius: 40px;
   }
 }
 
+.character-stats {
+  padding-bottom: 8px;
+}
+
 .character-def {
-  padding-bottom: 16px;;
+  padding-bottom: 16px;
 }
 
 .character {
@@ -93,7 +99,7 @@
   flex: 1;
   font-size: 32px;
 
-  span {
+  .alias-name {
     display: block;
     font-weight: normal;
     font-size: 16px;
@@ -103,4 +109,9 @@
 
 .top {
   display: flex;
+  
+
+  * + * {
+    margin-left: 16px;
+  }
 }

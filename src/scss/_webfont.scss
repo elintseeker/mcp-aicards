@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'komika-display';
+  src: url('/app/Komika-display.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.power-name,
+.alias-name {
+  font-family: "komika-display", sans-serif;
+  text-transform: uppercase;
+}
