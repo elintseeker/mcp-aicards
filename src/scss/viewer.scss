@@ -1,7 +1,16 @@
 @import "webfont";
 
+.injured {
+  background-color: maroon;
+
+  .character {
+    color: #b36868;
+  }
+}
+
 .card {
-  max-width: 600px;
+  max-width: 580px;
+  border: 1px solid #fff;
 }
 
 .entry {
@@ -16,16 +25,18 @@
   margin-right: 4px;
   width: 24px;
   height: 24px;
+  shape-rendering: geometricPrecision;
 }
 
 .stats {
+  position: relative;
+
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 
   font-weight: 600;
-  padding: 8px;
-  height: 1.8em;
 
   .name {
     font-weight: 800;
@@ -35,18 +46,7 @@
 .stat-block {
   display: flex;
   align-items: center;
-  padding: 4px;
-
-  &.fw {
-    margin-left: -24px;
-    flex: 1;
-
-    .icon img,
-    .icon svg {
-      width: 38px;
-      height: 38px;
-    }
-  }
+  padding: 0 4px;
 }
 
 .descriptions {
@@ -66,7 +66,7 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 18px;
+  font-size: 16px;
 
   .icon img {
     width: 32px;
@@ -74,24 +74,20 @@
   }
 
   .stat-block {
-    margin: 0; padding: 2px 8px;
-    height: auto;
+    margin: 0; 
+    padding: 0 12px 0 0;
 
     & + .stat-block {
       margin-left: 4px;
     }
 
     border: 1px solid #888;
-    border-radius: 40px;
+    border-radius: 100px;
   }
 }
 
 .character-stats {
   padding-bottom: 8px;
-}
-
-.character-def {
-  padding-bottom: 16px;
 }
 
 .character {
@@ -109,9 +105,33 @@
 
 .top {
   display: flex;
-  
+  align-items: center;
+  margin-bottom: 16px;
+}
 
-  * + * {
-    margin-left: 16px;
+.power-stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.power-name {
+  position: relative;
+  left: -20px;
+  padding: 4px;
+  flex: 1;
+
+  .icon img,
+  .icon svg {
+    width: 32px;
+    height: 32px;
   }
+}
+
+@media (max-width: 481px) {
+  .top { display: block; }
+  .character { margin-bottom: 16px; }
+  .power-name { min-width: 100%; }
+  .power-stats { flex: 1; }
 }

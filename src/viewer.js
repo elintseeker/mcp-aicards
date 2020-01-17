@@ -2,6 +2,8 @@ var app = new Vue({
   el: '#app',
   data: {
     characterData: null,
+    characterState: 'injured',
+    injured: false,
     name: null,
     alias: null,
     stats: null,
@@ -11,7 +13,7 @@ var app = new Vue({
     disableButton: false,
     showHelp: false,
     helpContent: null,
-    splash: true,
+    splash: true
   },
   methods: {
     randomizer: function(max) {
@@ -42,27 +44,36 @@ var app = new Vue({
           vm.characterData = data;
 
           // get character data
-          vm.displayStats();
+          vm.displayStats('default');
 
           setTimeout(function(){
             vm.splash = false;
           }, 1500);
         });
     },
-    displayStats: function() {
+    displayStats: function(state) {
       var vm = this;
+
       vm.name = vm.characterData.name;
       vm.alias = vm.characterData.alias;
-      vm.stats = vm.characterData.stats;
-      vm.defense = vm.characterData.defense;
-      vm.attacks = vm.characterData.attacks;
-      vm.superpowers = vm.characterData.superpowers;
+      vm.stats = vm.characterData[state].stats;
+      vm.defense = vm.characterData[state].defense;
+      vm.attacks = vm.characterData[state].attacks;
+      vm.superpowers = vm.characterData[state].superpowers;
+    },
+    flipCard: function(state){
+      var vm = this, body = document.querySelector('body');
 
-      // vm.defPhysical = vm.characterData.defense.physical;
-      // vm.defEnergy = vm.characterData.defense.energy;
-      // vm.defMystic = vm.characterData.defense.mystic;
-      // vm.defMystic = vm.characterData.defense.mystic;
-      console.log(vm.stats, vm.alias);
+      // show injured stats or not
+      if (state) {
+        vm.injured = false;
+        vm.displayStats('default');
+        body.classList.remove('injured');
+      } else {
+        vm.injured = true;
+        vm.displayStats('injured');
+        body.classList.add('injured');
+      }
     },
     getCard: function(actionType, cardName){
       var vm = this, count, card, cardCode, actions, selAction, doingAction;

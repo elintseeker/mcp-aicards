@@ -22,7 +22,7 @@
   </div>
   <div class="card" v-cloak>
     <div class="top">
-      <h1 class="character">{{ name }} <span class="alias">{{ alias }}</span></h1>
+      <h1 class="character">{{ name }} <span class="alias-name">{{ alias }}</span></h1>
       <div>
         <div class="character-stats">
           <div class="stat-block" v-for="(stat, name) in stats">
@@ -41,21 +41,23 @@
     <div>
       <div class="entry attack" v-for="(attack, name, index) in attacks">
         <div class="stats">
-          <div class="stat-block fw">
+          <div class="stat-block power-name">
             <div class="icon"><img :src="'/app/img/icon-' + attack.icon + '.svg'" :alt="attack.icon" /></div>
             {{ attack.power }}
           </div>
-          <div class="stat-block">
-            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
-            {{ attack.range }}
-          </div>
-          <div class="stat-block">
-            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
-            {{ attack.strength }}
-          </div>
-          <div class="stat-block">
-            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
-            {{ attack.cost }}
+          <div class="power-stats">
+            <div class="stat-block">
+              <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+              {{ attack.range }}
+            </div>
+            <div class="stat-block">
+              <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+              {{ attack.strength }}
+            </div>
+            <div class="stat-block">
+              <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+              {{ attack.cost }}
+            </div>
           </div>
         </div>
         <ul class="descriptions">
@@ -66,13 +68,15 @@
     <div>
       <div class="entry super" v-for="(item, name) in superpowers">
         <div class="stats">
-          <div class="stat-block fw" v-if="item.power">
+          <div class="stat-block power-name" v-if="item.power">
             <div class="icon"><img :src="'/app/img/icon-' + item.icon + '.svg'" :alt="item.icon" /></div>
             {{ item.power }}
           </div>
-          <div class="stat-block" v-if="item.cost">
-            <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
-            {{ item.cost }}
+          <div class="power-stats">
+            <div class="stat-block" v-if="item.cost">
+              <div class="icon"><img src="/app/img/icon-power.svg" alt="power cost" /></div>
+              {{ item.cost }}
+            </div>
           </div>
         </div>
         <ul class="descriptions" v-if="item.description">
@@ -82,9 +86,11 @@
     </div>
   </div>
   <div class="nav buttons">
-    <button @click.prevent="" :disabled="disableButton" class="mainbtn">&lt;</button>
-    <button @click.prevent="launchHelp">?</button>
-    <button @click.prevent="" :disabled="disableButton" class="mainbtn">&gt;</button>
+    <!-- <button @click.prevent="" :disabled="disableButton" class="mainbtn">&lt;</button> -->
+    <!-- <button @click.prevent="launchHelp">?</button> -->
+    <button @click.prevent="flipCard('injured')" v-if="injured">Normal</button>
+    <button @click.prevent="flipCard()" v-if="!injured">Injured</button>
+    <!-- <button @click.prevent="" :disabled="disableButton" class="mainbtn">&gt;</button> -->
   </div>
 </div>
 
@@ -112,5 +118,5 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it@10.0.0/dist/markdown-it.min.js"></script>
 <script src="/app/viewer.min.js"></script>
-</body>
+</body:class="{injured: injured}">
 </html>
