@@ -1,6 +1,11 @@
 var app = new Vue({
   el: '#app',
   data: {
+    characterList: {
+      "ultron-master": "Ultron, Master of Metal",
+      "captainmarvel": "Captain Marvel"
+    },
+    selCharacter: null,
     characterData: null,
     characterState: 'injured',
     injured: false,
@@ -13,24 +18,14 @@ var app = new Vue({
     disableButton: false,
     showHelp: false,
     helpContent: null,
-    splash: true
+    splash: true,
+    loading: true
   },
   methods: {
     randomizer: function(max) {
       var vm = this;
       // return Math.random() * (max - min) + min;
       return Math.floor(Math.random() * max);
-    },
-    formatText: function(text) {
-      if (text) {
-        for(var i=0; i < text.length; i++) {
-          text[i] = text[i].replace(/(\[b\])/g, '<strong>')
-            .replace(/(\[\/b\])/g, '</strong>')
-            .replace(/(\[em\])/g, '<strong>')
-            .replace(/(\[\/em\])/g, '</strong>');
-        }
-      }
-      return text;
     },
     getData: function(name){
       var vm = this;
@@ -40,15 +35,11 @@ var app = new Vue({
           return response.json();
         })
         .then(function(data){
-          console.log(data);
           vm.characterData = data;
 
           // get character data
           vm.displayStats('default');
-
-          setTimeout(function(){
-            vm.splash = false;
-          }, 1500);
+          vm.splash = false;
         });
     },
     displayStats: function(state) {
@@ -75,32 +66,9 @@ var app = new Vue({
         body.classList.add('injured');
       }
     },
-    getCard: function(actionType, cardName){
-      var vm = this, count, card, cardCode, actions, selAction, doingAction;
-
-      if (actionType && cardName) {
-        cardCode = cardName;
-        card = vm.characterData[actionType][cardName]
-      } else {
-        // pick basic or special
-        actions = Object.keys(vm.characterData);
-        selAction = vm.randomizer(actions.length);
-        doingAction = actions[selAction];
-
-        // get all text
-        vm.currentCards = vm.characterData[doingAction];
-        data = Object.keys(vm.currentCards);
-        cardCode = data[vm.randomizer(data.length)];
-        card = vm.currentCards[cardCode];
-      }
-
-      // write out for display
-      vm.currCard = cardCode;
-      vm.currCardName = vm.formatText(card.name);
-      vm.currCardTarget = vm.formatText(card.target);
-      vm.currCardAction = vm.formatText(card.action);
-      vm.currCardAction2 = vm.formatText(card.actionSecondary);
-      vm.currCardEtc = vm.formatText(card.actionEtc);
+    launchMenu: function(e) {
+      var vm = this;
+      vm.splash = true;
     },
     launchHelp: function(e) {
       var vm = this;
@@ -113,19 +81,32 @@ var app = new Vue({
     loadHelp: function() {
       var vm = this;
 
-      fetch('../HELP.md').then(function(response){
+      fetch('./HELP.md').then(function(response){
         return response.text();
       }).then(function(data){
         var md = window.markdownit();
         vm.helpContent = md.render(data);
       });
+    },
+    formatText: function(text) {
+      if (!text) return '';
+      text = text.toString();
+      return text.replace(/(\[b\])/g, '<strong>')
+        .replace(/(\[\/b\])/g, '</strong>')
+        .replace(/(\[em\])/g, '<strong>')
+        .replace(/(\[\/em\])/g, '</strong>')
+        .replace(/(\[damage\])/g, '<span class="inline-svg"><svg><use xlink:href="#wound" /></svg></span>')
+        .replace(/(\[power\])/g,  '<span class="inline-svg"><svg><use xlink:href="#power" /></svg></span>')
+        .replace(/(\[range\])/g,  '<span class="inline-svg"><svg><use xlink:href="#range" /></svg></span>')
+        .replace(/(\[energy\])/g, '<span class="inline-svg"><svg><use xlink:href="#energy" /></svg></span>');
     }
   },
   mounted: function() {
     this.$nextTick(function() {
       var vm = this;
       vm.loadHelp();
-      vm.getData('captainmarvel');
+      // vm.getData('captainmarvel');
+      vm.loading = false;
     });
   }
 });

@@ -1,0 +1,58 @@
+{
+  "name": "Template",
+  "alias": "Alias",
+  "default": {
+    "stats": {
+      "stamina": "8",
+      "move": "M",
+      "size": "3",
+      "threat": "30"
+    },
+    "defense": {
+      "physical": "5",
+      "energy": "4",
+      "mystic": "5"
+    },
+    "attacks": [
+      {
+        "power": "Strike",
+        "icon": "physical",
+        "range": 2,
+        "strength": 5,
+        "cost": 0,
+        "description": [
+          "After this attack is resolved, this character gains [power] equal to the [damage] dealt."
+        ]
+      }
+    ],
+    "superpowers": [
+      {
+        "power": "Binary Form",
+        "icon": "active",
+        "cost": 5,
+        "description": [
+          "Until the start of this character's next activation, it adds two dice to its attack and defense rolls."
+        ]
+      }
+    ]
+  },
+  "injured": {
+    "stats": {
+      "stamina": "",
+      "move": "M",
+      "size": "2",
+      "threat": ""
+    },
+    "defense": {
+      "physical": "",
+      "energy": "",
+      "mystic": ""
+    },
+    "attacks": [
+
+    ],
+    "superpowers": [
+
+    ]
+  }
+}

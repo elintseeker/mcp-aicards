@@ -1,27 +1,75 @@
 {
-  "name": "Ultron, Master of Metal",
-  "Move": [
-    "Move (M)",
-    "Move (S)"
-  ],
-  "attacks": [
-    "Metallic Talons"
-  ],
-  "special": {
-    "2" : [
-      "Energy Blast"
+  "name": "Ultron",
+  "alias": "Master of Metal",
+  "default": {
+    "stats": {
+      "stamina": 8,
+      "move": "M",
+      "size": 3,
+      "threat": 30
+    },
+    "defense": {
+      "physical": 5,
+      "energy": 4,
+      "mystic": 5
+    },
+    "attacks": [
+      {
+        "power": "Metallic Talons",
+        "icon": "physical",
+        "range": 2,
+        "strength": 6,
+        "cost": 0,
+        "description": [
+          "After this attack is resolved, this character gains [power] equal to the [damage] dealt.",
+          "[wild] [b]Bleed:[/b] After this attack is resolved, the target character gains Bleed special condition.",
+          "[wild] [b]Pierce:[/b] Change one of the defending characters's [crit], [wild], or [def] results to a blank."
+        ]
+      },
+      {
+        "power": "Energy Blast",
+        "icon": "energy",
+        "range": 4,
+        "strength": 7,
+        "cost": 2,
+        "description": [
+          "After this attack is resolved, this character gains 1 [power].",
+          "This attack rolls one less attack die for each [b]Corrupted Firmware[/b] token on this character."
+        ]
+      },
+      {
+        "power": "The Rage of Ultron",
+        "icon": "energy",
+        "range": "A1",
+        "strength": 9,
+        "cost": 6,
+        "description": [
+          "If this attack deals [damage], after this attack is resolved push the target chracter [b](S)[/b].",
+          "If this character has three or more [b]Corrupted Firmware[/b] tokens, increase the range of this attack to A2."
+        ]
+      }
     ],
-    "6" : [
-      "The Rage of Ultron"
+    "superpowers": [
+
     ]
   },
-  "abilities": {
-    "2" : [
-      "Matter Transference",
-      "Enough!!!"
+  "injured": {
+    "stats": {
+      "stamina": 6,
+      "move": "M",
+      "size": 2,
+      "threat": 4
+    },
+    "defense": {
+      "physical": 3,
+      "energy": 4,
+      "mystic": 3
+    },
+    "attacks": [
+
     ],
-    "6" : [
-      "The Folly of Man"
+    "superpowers": [
+
     ]
   }
 }

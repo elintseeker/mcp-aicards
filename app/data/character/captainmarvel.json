@@ -79,7 +79,7 @@
   },
   "injured": {
     "stats": {
-      "stamina": 200,
+      "stamina": 6,
       "move": "M",
       "size": 2,
       "threat": 4
