@@ -60,7 +60,7 @@
         "icon": "active",
         "cost": 3,
         "description": [
-          "Choose an interactive terrain feature or an enemy character, both of [size] 3 or less and within [range] 2, and throw it [m]. This superpower can be used only once per turn."
+          "Choose an interactive terrain feature or an enemy character, both of [size] 3 or less and within [range] 2, and throw it (M). This superpower can be used only once per turn."
         ]
       },
       {

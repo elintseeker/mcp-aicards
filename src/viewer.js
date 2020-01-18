@@ -98,7 +98,12 @@ var app = new Vue({
         .replace(/(\[damage\])/g, '<span class="inline-svg"><svg><use xlink:href="#wound" /></svg></span>')
         .replace(/(\[power\])/g,  '<span class="inline-svg"><svg><use xlink:href="#power" /></svg></span>')
         .replace(/(\[range\])/g,  '<span class="inline-svg"><svg><use xlink:href="#range" /></svg></span>')
-        .replace(/(\[energy\])/g, '<span class="inline-svg"><svg><use xlink:href="#energy" /></svg></span>');
+        .replace(/(\[energy\])/g, '<span class="inline-svg"><svg><use xlink:href="#energy" /></svg></span>')
+        .replace(/(\[crit\])/g, '<span class="inline-svg"><svg><use xlink:href="#crit" /></svg></span>')
+        .replace(/(\[wild\])/g, '<span class="inline-svg"><svg><use xlink:href="#wild" /></svg></span>')
+        .replace(/(\[block\])/g, '<span class="inline-svg"><svg><use xlink:href="#block" /></svg></span>')
+        .replace(/(\[hit\])/g, '<span class="inline-svg"><svg><use xlink:href="#hit" /></svg></span>')
+        .replace(/(\[size\])/g, '<span class="inline-svg"><svg><use xlink:href="#size" /></svg></span>');
     }
   },
   mounted: function() {

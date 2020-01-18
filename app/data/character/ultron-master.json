@@ -23,7 +23,7 @@
         "description": [
           "After this attack is resolved, this character gains [power] equal to the [damage] dealt.",
           "[wild] [b]Bleed:[/b] After this attack is resolved, the target character gains Bleed special condition.",
-          "[wild] [b]Pierce:[/b] Change one of the defending characters's [crit], [wild], or [def] results to a blank."
+          "[wild] [b]Pierce:[/b] Change one of the defending characters's [crit], [wild], or [block] results to a blank."
         ]
       },
       {
@@ -45,7 +45,7 @@
         "cost": 6,
         "description": [
           "If this attack deals [damage], after this attack is resolved push the target chracter [b](S)[/b].",
-          "If this character has three or more [b]Corrupted Firmware[/b] tokens, increase the range of this attack to A2."
+          "If this character has three or more [b]Corrupted Firmware[/b] tokens, increase the range of this attack to [b]A2[/b]."
         ]
       }
     ],
