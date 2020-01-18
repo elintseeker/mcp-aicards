@@ -104,12 +104,28 @@ var app = new Vue({
         .replace(/(\[block\])/g, '<span class="inline-svg"><svg><use xlink:href="#block" /></svg></span>')
         .replace(/(\[hit\])/g, '<span class="inline-svg"><svg><use xlink:href="#hit" /></svg></span>')
         .replace(/(\[size\])/g, '<span class="inline-svg"><svg><use xlink:href="#size" /></svg></span>');
+    },
+    insertIcons: function() {
+      var vm = this;
+      var body = document.querySelector('body');
+      var el = document.createElementNS('http://www.w3.org/2000/svg','svg');
+
+      fetch('/app/data/icon.data.xml')
+        .then(function(response){
+          return response.text();
+        })
+        .then(function(data){
+          el.setAttribute('class', 'icon-map');
+          body.appendChild(el);
+          el.innerHTML = data;
+        });
     }
   },
   mounted: function() {
     this.$nextTick(function() {
       var vm = this;
       vm.loadHelp();
+      vm.insertIcons();
       // vm.getData('captainmarvel');
       vm.loading = false;
     });
