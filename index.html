@@ -30,57 +30,62 @@
     </select> -->
 
   </div>
+  
   <div class="help" v-if="showHelp" v-cloak>
     <a href="#" @click.prevent="closeHelp" class="close">&times;</a>
     <div class="help-content" v-html="helpContent"></div>
   </div>
-  <div class="card" v-cloak>
-    <div class="cardcode" v-html="currCard"></div>
 
-    <div class="title" v-html="currCardName"></div>
+  <transition name="cardanim">
+    <div class="card" v-if="cardShow" v-cloak>
+      <div class="cardcode" v-html="currCard"></div>
 
-    <div class="data">
-      <h2>Targets of opportunity</h2>
-      <ul>
-        <li v-for="action in currCardTarget" v-html="action"></li>
-      </ul>
-    </div>
-
-    <!-- <div class="divider">
-      <div><svg><use xlink:href="#caret-down"/></svg></div>
-    </div> -->
-
-    <div class="data">
-      <h2>Actions</h2>
-      <ul>
-        <li v-for="action in currCardAction" v-html="action"></li>
-      </ul>
-    </div>
-
-    <div v-if="currCardAction2">
-      <div class="divider">
-        <div><svg class="alert"><use xlink:href="#alert"/></svg></div>
-      </div>
+      <div class="title" v-html="currCardName"></div>
 
       <div class="data">
-        <ul class="etc">
-          <li v-for="action in currCardAction2" v-html="action"></li>
+        <h2>Targets of opportunity</h2>
+        <ul>
+          <li v-for="action in currCardTarget" v-html="action"></li>
         </ul>
       </div>
-    </div>
 
-    <div v-if="currCardEtc">
-      <div class="divider">
-        <div><svg class="else"><use xlink:href="#help"/></svg></div>
-      </div>
+      <!-- <div class="divider">
+        <div><svg><use xlink:href="#caret-down"/></svg></div>
+      </div> -->
 
       <div class="data">
-        <ul class="etc">
-          <li v-for="action in currCardEtc" v-html="action"></li>
+        <h2>Actions</h2>
+        <ul>
+          <li v-for="action in currCardAction" v-html="action"></li>
         </ul>
       </div>
+
+      <div v-if="currCardAction2">
+        <div class="divider">
+          <div><svg class="alert"><use xlink:href="#alert"/></svg></div>
+        </div>
+
+        <div class="data">
+          <ul class="etc">
+            <li v-for="action in currCardAction2" v-html="action"></li>
+          </ul>
+        </div>
+      </div>
+
+      <div v-if="currCardEtc">
+        <div class="divider">
+          <div><svg class="else"><use xlink:href="#help"/></svg></div>
+        </div>
+
+        <div class="data">
+          <ul class="etc">
+            <li v-for="action in currCardEtc" v-html="action"></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </transition>
+
   <div class="nav buttons">
     <button @click.prevent="launchHelp">?</button>
     <button @click.prevent="getAICard" :disabled="disableButton" class="mainbtn">Draw AI Card</button>  

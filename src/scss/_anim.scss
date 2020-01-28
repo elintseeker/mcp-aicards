@@ -1,0 +1,23 @@
+.cardanim-enter-active,
+.cardanim-leave-active {
+  transition: all .2s ease-in-out;
+}
+
+.cardanim-enter, .cardanim-leave-to {
+  transform: translateY(-33%);
+  opacity: 0;
+}
+
+.cardanim-stats-enter-active,
+.cardanim-stats-leave-active {
+  transition: all .2s ease-in-out;
+}
+
+.cardanim-stats-enter, .cardanim-stats-leave-to {
+  transform: translateY(-33%);
+  opacity: 0;
+}
+
+.hasanim {
+  transition: background-color .5s ease;
+}

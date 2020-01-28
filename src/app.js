@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    cardShow: true,
     selectedData: null,
     characterData: null,
     currentCards: null,
@@ -93,9 +94,12 @@ var app = new Vue({
       //   console.log('getting new card...');
       // }
 
-      vm.disableButton = true
+      vm.cardShow = false;
+      vm.disableButton = true;
+      
       setTimeout(function(){
-        vm.disableButton = false
+        vm.disableButton = false;
+        vm.cardShow = true;
       }, 500);
     },
     launchHelp: function(e) {
