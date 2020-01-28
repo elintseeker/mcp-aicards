@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    cardShow: true,
     selectedData: null,
     characterData: null,
     currentCards: null,
@@ -83,6 +84,7 @@ var app = new Vue({
     getAICard: function(e) {
       var vm = this;
 
+      vm.cardShow = false;
       vm.getCard();
       
       // console.log(vm.currCard, vm.prevCard);
@@ -95,6 +97,7 @@ var app = new Vue({
 
       vm.disableButton = true
       setTimeout(function(){
+        vm.cardShow = true;
         vm.disableButton = false
       }, 500);
     },
