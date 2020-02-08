@@ -33,10 +33,11 @@
     "B3": {
       "name": "Move & Attack",
       "target": [
-        "Nearest model (wounded)"
+        "Nearest model (most-wounds)",
+        "Nearest model"
       ],
       "action": [
-        "Move",
+        "Move (superpower/normal)",
         "Attack (superpower)"
       ],
       "actionEtc": [
@@ -49,7 +50,7 @@
         "Nearest model"
       ],
       "action": [
-        "Move",
+        "Move (superpower/normal)",
         "Attack"
       ],
       "actionEtc":[
@@ -59,10 +60,11 @@
     "B5": {
       "name": "Move & Attack",
       "target": [
-        "Nearest model, near objective"
+        "Nearest model, near objective",
+        "Nearest model"
       ],
       "action": [
-        "Move",
+        "Move (superpower/normal)",
         "Attack"
       ],
       "actionEtc":[
@@ -107,7 +109,7 @@
         "Nearest objective (contested)"
       ],
       "action": [
-        "Move",
+        "Move (superpower/normal)",
         "Interact"
       ],
       "actionSecondary": [
@@ -118,6 +120,7 @@
     "B9": {
       "name": "Error...",
       "target": [
+        "Nearest model (most-health)",
         "Nearest model"
       ],
       "action": [
@@ -125,7 +128,7 @@
         "Attack (superpower/throw)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest model[/b] and Attacks."
+        "If no valid targets in range, this model (superpower/normal) moves towards [b]nearest model[/b] and Attacks."
       ]
     },
     "B10": {
@@ -134,7 +137,7 @@
         "Nearest terrain"
       ],
       "action": [
-        "Move, (cover)"
+        "Move (cover)"
       ],
       "actionSecondary": [
         "If a target opposing model is in range [em]after its first action[/em], Attack."
@@ -147,7 +150,7 @@
       "name": "Pursuit...",
       "target": [
         "Previous target",
-        "Nearest model (most-wounded)",
+        "Nearest model (most-wounds)",
         "Farthest model"
       ],
       "action": [
@@ -155,13 +158,13 @@
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest model[/b]."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b]."
       ]
     },
     "B12": {
       "name": "Assault!",
       "target": [
-        "Nearest model (most-wounded)",
+        "Nearest model (most-wounds)",
         "Nearest model (most-health)",
         "Nearest model"
       ],
@@ -170,7 +173,7 @@
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest model[/b] (random) and Attacks."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] (random) and Attacks."
       ]
     },
     "B13": {
@@ -185,7 +188,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards [b]nearest model[/b] (most wounds) and Attacks."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] (most-wound) and Attacks."
       ]
     },
     "B14": {
@@ -199,7 +202,7 @@
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest random model[/b]."
+        "If no valid targets in range, this model (superpower/normal) moves towards [b]nearest random model[/b]."
       ]
     },
     "B15": {
@@ -213,7 +216,7 @@
         "Attack"
       ],
       "actionEtc": [
-        "If no valid targets in range, model moves towards [b]nearest random model[/b]."
+        "If no valid targets in range, model (superpower/normal) moves towards [b]nearest random model[/b]."
       ]
     },
     "B16": {
@@ -227,7 +230,7 @@
         "Attack"
       ],
       "actionEtc": [
-        "If no valid targets in range, model moves towards the [b]nearest objective[/b] and interacts with it when able."
+        "If no valid targets in range, model (superpower/normal) moves towards the [b]nearest objective[/b] and interacts with it when able."
       ]
     }
   }
