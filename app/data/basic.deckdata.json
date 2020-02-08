@@ -7,7 +7,7 @@
       ],
       "action": [
         "Move",
-        "Move"
+        "Interact"
       ],
       "actionSecondary": [
         "If a target opposing model is in range [em]after its first action[/em], Attack."
@@ -25,9 +25,6 @@
       ],
       "actionSecondary": [
         "If a target opposing model is in range [em]after its first action[/em], Attack."
-      ],
-      "actionEtc": [
-        "If no valid targets in range, model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
       ]
     },
     "B3": {
@@ -41,7 +38,7 @@
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
+        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
       ]
     },
     "B4": {
@@ -54,7 +51,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested)."
+        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
       ]
     },
     "B5": {
@@ -68,7 +65,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards the [b]nearest objective[/b] and interacts with it when able."
+        "If no valid targets in range, this model moves towards the [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
       ]
     },
     "B6": {
@@ -93,8 +90,7 @@
         "Nearest model"
       ],
       "action": [
-        "Move (cover)",
-        "Attack"
+        "Move (cover)"
       ],
       "actionSecondary": [
         "When attacked, activate a [em]reactive superpower[/em] when able."
@@ -124,11 +120,11 @@
         "Nearest model"
       ],
       "action": [
-        "Attack",
-        "Attack (superpower/throw)"
+        "Attack (superpower/throw)",
+        "Attack"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model (superpower/normal) moves towards [b]nearest model[/b] and Attacks."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] and Attacks."
       ]
     },
     "B10": {
@@ -140,7 +136,8 @@
         "Move (cover)"
       ],
       "actionSecondary": [
-        "If a target opposing model is in range [em]after its first action[/em], Attack."
+        "If a target opposing model is in range [em]after its first action[/em], Attack.",
+        "When attacked, activate a [em]reactive superpower[/em] when able."
       ],
       "actionEtc": [
         "If no valid targets in range, this model moves towards [b]nearest model[/b] retaining cover."
@@ -150,15 +147,14 @@
       "name": "Pursuit...",
       "target": [
         "Previous target",
-        "Nearest model (most-wounds)",
-        "Farthest model"
+        "Nearest model (most-wounds)"
       ],
       "action": [
         "Move",
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b]."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest objective[/b] (contested) and Attacks nearest model, in range."
       ]
     },
     "B12": {
@@ -188,35 +184,33 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] (most-wound) and Attacks."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] (most-wounds) and Attacks."
       ]
     },
     "B14": {
       "name": "Targeting...",
       "target": [
-        "Nearest model",
-        "Farthest model"
+        "Nearest model"
       ],
       "action": [
         "Move",
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model (superpower/normal) moves towards [b]nearest random model[/b]."
+        "If no valid targets in range, this model moves (superpower/normal) towards [b]nearest model[/b] (random) and Attacks."
       ]
     },
     "B15": {
       "name": "Pursuing...",
       "target": [
-        "Previous target",
-        "Farthest model"
+        "Previous target"
       ],
       "action": [
         "Attack (superpower)",
         "Attack"
       ],
       "actionEtc": [
-        "If no valid targets in range, model (superpower/normal) moves towards [b]nearest random model[/b]."
+        "If no valid targets in range, model moves (superpower/normal) towards [b]nearest model[/b] and Attacks."
       ]
     },
     "B16": {
@@ -230,7 +224,7 @@
         "Attack"
       ],
       "actionEtc": [
-        "If no valid targets in range, model (superpower/normal) moves towards the [b]nearest objective[/b] and interacts with it when able."
+        "If no valid targets in range, model moves (superpower/normal) towards the [b]nearest objective[/b] (contested) and interacts with it when able."
       ]
     }
   }
