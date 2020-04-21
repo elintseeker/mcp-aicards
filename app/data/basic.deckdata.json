@@ -10,21 +10,20 @@
         "Interact"
       ],
       "actionSecondary": [
-        "If a target opposing model is in range [em]after its first action[/em], Attack."
+        "If an opposing model is in range [em]after the first action[/em], Attack."
       ]
     },
     "B2": {
       "name": "Searching...",
       "target": [
-        "Nearest objective (uncontrolled)",
-        "Nearest objective"
+        "Nearest objective (uncontrolled)"
       ],
       "action": [
         "Move",
         "Interact"
       ],
       "actionSecondary": [
-        "If a target opposing model is in range [em]after its first action[/em], Attack."
+        "If an opposing model is in range [em]after the first action[/em], Attack."
       ]
     },
     "B3": {
@@ -38,7 +37,7 @@
         "Attack (superpower)"
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
+        "If no valid targets in range, move towards [b]nearest objective[/b] (uncontrolled/contested) and interacts."
       ]
     },
     "B4": {
@@ -51,7 +50,7 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
+        "If no valid targets in range, move towards [b]nearest objective[/b] (uncontrolled/contested) and interacts."
       ]
     },
     "B5": {
@@ -65,51 +64,57 @@
         "Attack"
       ],
       "actionEtc":[
-        "If no valid targets in range, this model moves towards the [b]nearest objective[/b] (uncontrolled/contested) and interacts with it when able."
+        "If no valid targets in range, move towards [b]nearest objective[/b] (uncontrolled/contested) and interacts."
       ]
     },
     "B6": {
       "name": "Protecting...",
       "target": [
-        "Nearest model, near objective"
+        "Nearest controlled objective",
+        "Nearest uncontrolled objective"
       ],
       "action": [
         "Move",
-        "Attack (superpower/throw)"
+        "Attack with Superpower (throw/push)",
+        "Attack"
       ],
       "actionSecondary": [
         "When attacked, activate a [em]reactive superpower[/em] when able."
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves to the [b]nearest terrain/objective[/b] for cover."
+        "If no valid targets in range, move towards [b]nearest objective[/b] (uncontrolled/contested) and interacts."
       ]
     },
     "B7": {
-      "name": "Cautious...",
+      "name": "Caution...",
       "target": [
-        "Nearest model"
+        "Nearest controlled objective",
+        "Nearest uncontrolled objective"
       ],
       "action": [
-        "Move (cover)"
+        "Move",
+        "Attack"
       ],
       "actionSecondary": [
         "When attacked, activate a [em]reactive superpower[/em] when able."
       ],
       "actionEtc": [
-        "If no valid targets in range, this model moves to the [b]nearest terrain[/b] for cover."
+        "If no valid targets in range, move towards [b]nearest objective[/b] and interacts."
       ]
     },
     "B8": {
       "name": "Acquiring...",
       "target": [
-        "Nearest objective (contested)"
+        "Nearest uncontrolled objective"
       ],
       "action": [
-        "Move (superpower/normal)",
-        "Interact"
+        "Move (superpower/normal)"
       ],
       "actionSecondary": [
-        "If a target opposing model is in range [em]after its first action[/em], Attack.",
+        "If a target opposing model is in range [em]after its first action[/em], Attack."
+      ],
+      "actionEtc": [
+        "If no valid targets in range, move towards [b]nearest objective[/b] and interacts.",
         "When attacked, activate a [em]reactive superpower[/em] when able."
       ]
     },

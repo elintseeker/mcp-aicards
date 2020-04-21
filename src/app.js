@@ -23,6 +23,11 @@ var app = new Vue({
       // return Math.random() * (max - min) + min;
       return Math.floor(Math.random() * max);
     },
+    shuffle: function() {
+      var vm = this;
+      console.log(vm.characterData);
+      vm.getData('basic');
+    },
     formatText: function(text) {
       if (text) {
         for(var i=0; i < text.length; i++) {
